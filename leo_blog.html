@@ -3,201 +3,78 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>测试心得 | 郝阳的博客</title>
-    <style>
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --text-color: #34495e;
-            --bg-color: #f8f9fa;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Arial, sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* 头部样式 */
-        header {
-            background-color: var(--primary-color);
-            padding: 2rem 0;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        .profile {
-            text-align: center;
-        }
-
-        .avatar {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            border: 3px solid white;
-            margin-bottom: 1rem;
-            transition: transform 0.3s ease;
-        }
-
-        .avatar:hover {
-            transform: rotate(5deg);
-        }
-
-        nav {
-            background: white;
-            padding: 1rem;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--secondary-color);
-        }
-
-        /* 主要内容区域 */
-        main {
-            padding: 2rem 0;
-        }
-
-        .article-card {
-            background: white;
-            border-radius: 8px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .article-card:hover {
-            transform: translateY(-3px);
-        }
-
-        .article-date {
-            color: #7f8c8d;
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .article-title {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-
-        /* 页脚样式 */
-        footer {
-            background: var(--primary-color);
-            color: white;
-            padding: 2rem 0;
-            margin-top: 3rem;
-            text-align: center;
-        }
-
-        .resume-link {
-            display: inline-block;
-            background: var(--secondary-color);
-            color: white;
-            padding: 0.8rem 1.5rem;
-            border-radius: 5px;
-            text-decoration: none;
-            margin-top: 1rem;
-            transition: background 0.3s ease;
-        }
-
-        .resume-link:hover {
-            background: #2980b9;
-        }
-
-        /* 响应式设计 */
-        @media (max-width: 768px) {
-            .nav-links {
-                flex-direction: column;
-                text-align: center;
-                gap: 1rem;
-            }
-
-            .article-card {
-                padding: 1.5rem;
-            }
-        }
-    </style>
+    <title>测试之道 | 郝阳的极客空间</title>
+    <link rel="stylesheet" href="leo_blog.css">
 </head>
 <body>
+    <div class="gradient-bg"></div>
+    
     <header>
-        <div class="container profile">
-            <img src="my_icon.jpg" alt="郝阳" class="avatar">
-            <h1 style="color: white; margin-top: 1rem;">测试工程师 | 郝阳</h1>
+        <div class="container">
+            <div class="profile-card">
+                <img src="my_icon.jpg" alt="郝阳" class="avatar">
+                <div class="profile-info">
+                    <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">郝阳</h1>
+                    <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                        质量保障专家 | 自动化测试架构师 | 技术布道者
+                    </p>
+                    <a href="郝阳-游戏测试17623623865.pdf" class="resume-link" download>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        获取完整简历
+                    </a>
+                </div>
+            </div>
         </div>
     </header>
 
-    <nav>
-        <div class="container">
-            <ul class="nav-links">
-                <li><a href="#recent">最新文章</a></li>
-                <li><a href="#archive">文章归档</a></li>
-                <li><a href="#about">关于作者</a></li>
-            </ul>
-        </div>
-    </nav>
-
     <main class="container">
-        <section id="recent">
-            <h2 style="margin-bottom: 2rem;">最新测试心得</h2>
-            
+        <div class="articles-grid">
             <article class="article-card">
-                <div class="article-date">2023-10-20</div>
-                <h3 class="article-title">自动化测试框架设计实践</h3>
-                <p>最近在项目中重构了自动化测试框架，采用Page Object模式结合Allure报告系统...</p>
+                <div class="article-meta">
+                    <span>2023-10-20</span>
+                    <span class="article-tag">自动化测试</span>
+                </div>
+                <h2 class="article-title">构建企业级自动化测试框架的实践之路</h2>
+                <p class="article-excerpt">深入探讨如何设计可扩展的测试框架架构，结合Allure可视化报告与CI/CD流水线的最佳实践...</p>
             </article>
 
             <article class="article-card">
-                <div class="article-date">2023-10-15</div>
-                <h3 class="article-title">性能测试中的瓶颈分析方法</h3>
-                <p>通过JMeter和火焰图分析定位系统性能瓶颈的实战经验分享...</p>
+                <div class="article-meta">
+                    <span>2023-10-18</span>
+                    <span class="article-tag">性能工程</span>
+                </div>
+                <h2 class="article-title">全链路压测的架构设计与实施</h2>
+                <p class="article-excerpt">从流量模型构建到瓶颈定位，揭秘千万级并发系统的性能优化方法论...</p>
             </article>
 
             <article class="article-card">
-                <div class="article-date">2023-10-10</div>
-                <h3 class="article-title">CI/CD中的测试策略优化</h3>
-                <p>如何在持续集成流水线中平衡测试覆盖率与执行效率...</p>
+                <div class="article-meta">
+                    <span>2023-10-15</span>
+                    <span class="article-tag">质量保障</span>
+                </div>
+                <h2 class="article-title">AI在测试领域的最新应用实践</h2>
+                <p class="article-excerpt">探索智能测试用例生成与缺陷预测的前沿技术，构建下一代智能测试平台...</p>
             </article>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>© 2023 郝阳的测试笔记</p>
-            <a href="郝阳-游戏测试17623623865.pdf" class="resume-link" download>下载我的简历</a>
-            <div style="margin-top: 1.5rem;">
-                <a href="https://github.com/yourprofile" style="color: white; margin: 0 1rem;">GitHub</a>
-                <a href="https://linkedin.com/in/yourprofile" style="color: white; margin: 0 1rem;">LinkedIn</a>
-            </div>
         </div>
-    </footer>
+
+        <div class="social-links">
+            <a href="https://github.com/yourprofile" class="social-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg>
+            </a>
+            <a href="https://linkedin.com/in/yourprofile" class="social-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                    <rect x="2" y="9" width="4" height="12"></rect>
+                    <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+            </a>
+        </div>
+    </main>
 </body>
 </html>
